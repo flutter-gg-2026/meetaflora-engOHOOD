@@ -10,7 +10,7 @@ class DioClient {
   DioClient() {
     _aiDio = Dio(
       BaseOptions(
-        baseUrl: ApiEndpoints.AiBaseUrl,
+        baseUrl: ApiEndpoints.aiBaseUrl,
         connectTimeout: const Duration(seconds: 30),
         receiveTimeout: const Duration(seconds: 30),
         headers: {
@@ -22,7 +22,7 @@ class DioClient {
     );
     _photoDio = Dio(
       BaseOptions(
-        baseUrl: ApiEndpoints.PhotoBaseUrl,
+        baseUrl: ApiEndpoints.photoBaseUrl,
         connectTimeout: const Duration(seconds: 30),
         receiveTimeout: const Duration(seconds: 30),
         headers: {

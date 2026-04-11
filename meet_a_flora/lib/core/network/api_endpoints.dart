@@ -2,9 +2,9 @@
 class ApiEndpoints {
   ApiEndpoints._();
 
-  static const String AiBaseUrl =
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
-  static const String generateContent = "generateContent";
-   static const String PhotoBaseUrl ="https://api.pexels.com/v1";
-  static const String SearchPhoto = "/search";
+  static const String aiBaseUrl =
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest";
+  static const String generateContent = ":generateContent";
+  static const String photoBaseUrl = "https://api.pexels.com/v1";
+  static const String searchPhoto = "/search";
 }

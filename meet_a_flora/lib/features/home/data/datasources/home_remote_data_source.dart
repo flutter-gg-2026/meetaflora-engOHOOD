@@ -20,9 +20,9 @@ class HomeRemoteDataSource implements BaseHomeRemoteDataSource {
   Future<HomeModel> getHome() async {
     try {
       final response = _dio.postRequest();
-      // final res = _dio.getPhoto();
+      final res = _dio.getPhoto();
       print(response);
-      // print(res);
+      print(res);
 
       return HomeModel(id: 1, firstName: "Last Name", lastName: "First Name");
     } catch (error) {
