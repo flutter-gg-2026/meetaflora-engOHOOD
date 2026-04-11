@@ -18,12 +18,14 @@ class HomeRemoteDataSource implements BaseHomeRemoteDataSource {
   Future<List<ImageModel>> getHome() async {
     try {
       final res = await _dio.getPhoto();
-      print(res);
-      final imageList = List.from(
-        res,
-      ).map((img) => ImageModel.fromJson(img['src'])).toList();
+      print(res.length);
+      print("---------------------------------3.1");
+      final imageList = List.from(res)
+          .map((img) => ImageModel.fromJson(img['src']))
+          .toList();
       return imageList;
     } catch (error) {
+      print("---------------------------------3.2");
       throw FailureExceptions.getException(error);
     }
   }

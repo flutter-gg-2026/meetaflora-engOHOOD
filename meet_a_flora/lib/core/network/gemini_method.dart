@@ -84,6 +84,6 @@ Keep the response clear, structured, and concise.""",
 
     print(respons.data['photos']);
 
-    return respons.data['photos'];
+    return respons.data['photos'].cast<Map<String, dynamic>>();
   }
 }
