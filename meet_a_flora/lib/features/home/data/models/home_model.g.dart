@@ -6,15 +6,8 @@ part of 'home_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_HomeModel _$HomeModelFromJson(Map<String, dynamic> json) => _HomeModel(
-  id: (json['id'] as num).toInt(),
-  firstName: json['firstName'] as String,
-  lastName: json['lastName'] as String,
-);
+_ImageModel _$ImageModelFromJson(Map<String, dynamic> json) =>
+    _ImageModel(original: json['original'] as String);
 
-Map<String, dynamic> _$HomeModelToJson(_HomeModel instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'firstName': instance.firstName,
-      'lastName': instance.lastName,
-    };
+Map<String, dynamic> _$ImageModelToJson(_ImageModel instance) =>
+    <String, dynamic>{'original': instance.original};

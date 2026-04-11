@@ -11,7 +11,7 @@ class HomeCubit extends Cubit<HomeState> {
     final result = await _homeUseCase.getHome();
     result.when(
       (success) {
-        //here is when success result
+       emit(HomeSuccessState());
       },
       (whenError) {
        //here is when error result

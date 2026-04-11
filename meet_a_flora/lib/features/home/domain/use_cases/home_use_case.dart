@@ -11,7 +11,7 @@ class HomeUseCase {
 
   HomeUseCase(this._repositoryData);
 
-   Future<Result<HomeEntity, Failure>> getHome() async {
+   Future<Result<List<ImageEntity>, Failure>> getHome() async {
     return _repositoryData.getHome();
   }
 }

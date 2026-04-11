@@ -4,6 +4,7 @@ import 'dart:typed_data';
 import 'package:flutter/services.dart';
 import 'package:meet_a_flora/core/network/api_endpoints.dart';
 import 'package:meet_a_flora/core/network/dio_client.dart';
+import 'package:meet_a_flora/features/home/data/models/home_model.dart';
 
 extension GeminiMethod on DioClient {
   Future<String> postRequest() async {
@@ -26,7 +27,40 @@ extension GeminiMethod on DioClient {
                   "data": base64String,
                 },
               },
-              {"text": "Caption this image."},
+              {
+                "text":
+                    """You are a professional botanist and plant identification expert.
+
+Analyze the provided image of a plant and return a structured response in the following format:
+
+1. Common Name:
+2. Scientific Name (if possible):
+3. Plant Type: (tree / flower / herb / shrub / succulent / etc.)
+4. Description:
+   - Brief physical description of the plant
+
+5. Key Features:
+   - List 3–6 visible characteristics
+
+6. Health Status (if visible):
+   - Healthy / Unhealthy / Unknown
+   - Explain why
+
+7. Possible Uses:
+   - Medicinal / decorative / agricultural / other
+
+8. Care Instructions:
+   - Watering
+   - Light requirement
+   - Soil type (if possible)
+
+9. Confidence Level:
+   - High / Medium / Low
+
+If the plant cannot be identified clearly, say "Unknown plant" and explain why.
+
+Keep the response clear, structured, and concise.""",
+              },
             ],
           },
         ],
@@ -38,12 +72,18 @@ extension GeminiMethod on DioClient {
     return '';
   }
 
-  Future<void> getPhoto() async {
-    final respons =await photoDio.get(
+  Future<List<Map<String, dynamic>>> getPhoto() async {
+    final respons = await photoDio.get(
       ApiEndpoints.searchPhoto,
-      queryParameters: {'query': "nature", 'per_page': 1},
+      queryParameters: {
+        'query': "flower",
+        'per_page': 20,
+        'orientation': 'square',
+      },
     );
 
     print(respons.data['photos']);
+
+    return respons.data['photos'];
   }
 }
