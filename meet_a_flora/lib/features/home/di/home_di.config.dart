@@ -11,7 +11,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
-import 'package:meet_a_flora/core/services/local_keys_service.dart' as _i95;
+import 'package:meet_a_flora/core/network/dio_client.dart' as _i479;
 import 'package:meet_a_flora/features/home/data/datasources/home_remote_data_source.dart'
     as _i25;
 import 'package:meet_a_flora/features/home/data/repositories/home_repository_data.dart'
@@ -20,7 +20,6 @@ import 'package:meet_a_flora/features/home/domain/repositories/home_repository_d
     as _i892;
 import 'package:meet_a_flora/features/home/domain/use_cases/home_use_case.dart'
     as _i546;
-import 'package:supabase_flutter/supabase_flutter.dart' as _i454;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -30,10 +29,7 @@ extension GetItInjectableX on _i174.GetIt {
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
     gh.lazySingleton<_i25.BaseHomeRemoteDataSource>(
-      () => _i25.HomeRemoteDataSource(
-        gh<_i95.LocalKeysService>(),
-        gh<_i454.SupabaseClient>(),
-      ),
+      () => _i25.HomeRemoteDataSource(gh<_i479.DioClient>()),
     );
     gh.lazySingleton<_i892.HomeRepositoryDomain>(
       () => _i972.HomeRepositoryData(gh<_i25.BaseHomeRemoteDataSource>()),

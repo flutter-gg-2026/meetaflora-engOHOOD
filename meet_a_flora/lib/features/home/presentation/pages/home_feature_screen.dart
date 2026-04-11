@@ -11,7 +11,7 @@ class HomeFeatureScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Home Feature Screen')),
       body: Column(children: [
-          
+          ElevatedButton(onPressed: (){context.read<HomeCubit>().getHomeMethod();}, child: Text('click'))
         ],
       ),
     );

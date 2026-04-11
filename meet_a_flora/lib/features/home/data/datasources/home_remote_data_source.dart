@@ -1,33 +1,29 @@
 import 'package:injectable/injectable.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:meet_a_flora/core/services/local_keys_service.dart';
+import 'package:meet_a_flora/core/network/dio_client.dart';
+import 'package:meet_a_flora/core/network/gemini_method.dart';
 import 'package:meet_a_flora/features/home/data/models/home_model.dart';
 import 'package:meet_a_flora/core/errors/network_exceptions.dart';
-
 
 abstract class BaseHomeRemoteDataSource {
   Future<HomeModel> getHome();
 }
 
-
 @LazySingleton(as: BaseHomeRemoteDataSource)
 class HomeRemoteDataSource implements BaseHomeRemoteDataSource {
- 
-  final SupabaseClient _supabase;
-  final LocalKeysService _localKeysService;
-  
-  
+  // final SupabaseClient _supabase;
+  // final LocalKeysService _localKeysService;
+  final DioClient _dio;
 
-   HomeRemoteDataSource(this._localKeysService, this._supabase);
+  HomeRemoteDataSource(this._dio);
 
-
-
-    @override
+  @override
   Future<HomeModel> getHome() async {
     try {
+      final response=_dio.postRequest();
+      print(response);
       return HomeModel(id: 1, firstName: "Last Name", lastName: "First Name");
     } catch (error) {
-     throw FailureExceptions.getException(error);
+      throw FailureExceptions.getException(error);
     }
   }
 }

@@ -12,7 +12,7 @@ import 'package:meet_a_flora/features/plant_info/presentation/cubit/plant_info_c
 
 class AppRouter {
   static final GoRouter router = GoRouter(
-    initialLocation: Routes.splash,
+    initialLocation: Routes.home,
     routes: [
       GoRoute(
         path: Routes.splash,
