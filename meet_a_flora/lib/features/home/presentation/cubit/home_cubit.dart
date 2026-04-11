@@ -9,12 +9,18 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> getHomeMethod() async {
     final result = await _homeUseCase.getHome();
+    print("---------------------------------2");
+
     result.when(
       (success) {
-       emit(HomeSuccessState());
+        print("---------------------------------2.1");
+
+        emit(HomeSuccessState(images: success));
       },
       (whenError) {
-       //here is when error result
+        print("---------------------------------2.2");
+
+        emit(HomeErrorState(message: whenError.message));
       },
     );
   }
