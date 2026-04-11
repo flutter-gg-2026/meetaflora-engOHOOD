@@ -14,8 +14,8 @@ extension GeminiMethod on DioClient {
     Uint8List bytes = byteData.buffer.asUint8List();
     String base64String = base64.encode(bytes);
 
-    final response = await dio.post(
-      ApiEndpoints.generateContent,
+    final response = await aiDio.post(
+      ApiEndpoints.AiBaseUrl,
       data: {
         "contents": [
           {
@@ -37,5 +37,13 @@ extension GeminiMethod on DioClient {
 
     return '';
   }
-}
 
+  Future<void> getPhoto() async {
+    final respons =await photoDio.get(
+      ApiEndpoints.SearchPhoto,
+      queryParameters: {'query': "nature", 'per_page': 1},
+    );
+
+    print(respons.data['photos']);
+  }
+}

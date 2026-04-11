@@ -27,12 +27,12 @@ class DioClient {
         receiveTimeout: const Duration(seconds: 30),
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
           'Authorization': dotenv.env['Pexels_API_Key'],
         },
       ),
     );
   }
 
-  Dio get dio => _aiDio;
+  Dio get aiDio => _aiDio;
+  Dio get photoDio => _photoDio;
 }
