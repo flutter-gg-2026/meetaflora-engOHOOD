@@ -6,6 +6,7 @@ import 'api_endpoints.dart';
 @lazySingleton
 class DioClient {
   late final Dio _aiDio;
+
   DioClient() {
     _aiDio = Dio(
       BaseOptions(

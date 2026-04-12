@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:injectable/injectable.dart';
 import 'package:meet_a_flora/core/network/dio_client.dart';
 import 'package:meet_a_flora/core/network/gemini_method.dart';
@@ -18,8 +20,8 @@ class PlantInfoRemoteDataSource implements BasePlantInfoRemoteDataSource {
   Future<PlantInfoModel> getPlantInfo(String image) async {
     try {
       final res = await _client.postRequest(image);
-      print(res);
-      return PlantInfoModel(text: res);
+
+      return  PlantInfoModel.fromJson(jsonDecode(res));
     } catch (error) {
       throw FailureExceptions.getException(error);
     }

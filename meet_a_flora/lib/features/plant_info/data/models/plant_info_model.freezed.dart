@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PlantInfoModel {
 
- String get text;
+ String get commonName; String get scientificName; String get plantType; String get description; List<String> get keyFeatures; String get healthStatus; String get healthReason; List<String> get possibleUses; String get watering; String get light; String get soil;
 /// Create a copy of PlantInfoModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $PlantInfoModelCopyWith<PlantInfoModel> get copyWith => _$PlantInfoModelCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PlantInfoModel&&(identical(other.text, text) || other.text == text));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PlantInfoModel&&(identical(other.commonName, commonName) || other.commonName == commonName)&&(identical(other.scientificName, scientificName) || other.scientificName == scientificName)&&(identical(other.plantType, plantType) || other.plantType == plantType)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other.keyFeatures, keyFeatures)&&(identical(other.healthStatus, healthStatus) || other.healthStatus == healthStatus)&&(identical(other.healthReason, healthReason) || other.healthReason == healthReason)&&const DeepCollectionEquality().equals(other.possibleUses, possibleUses)&&(identical(other.watering, watering) || other.watering == watering)&&(identical(other.light, light) || other.light == light)&&(identical(other.soil, soil) || other.soil == soil));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,text);
+int get hashCode => Object.hash(runtimeType,commonName,scientificName,plantType,description,const DeepCollectionEquality().hash(keyFeatures),healthStatus,healthReason,const DeepCollectionEquality().hash(possibleUses),watering,light,soil);
 
 @override
 String toString() {
-  return 'PlantInfoModel(text: $text)';
+  return 'PlantInfoModel(commonName: $commonName, scientificName: $scientificName, plantType: $plantType, description: $description, keyFeatures: $keyFeatures, healthStatus: $healthStatus, healthReason: $healthReason, possibleUses: $possibleUses, watering: $watering, light: $light, soil: $soil)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $PlantInfoModelCopyWith<$Res>  {
   factory $PlantInfoModelCopyWith(PlantInfoModel value, $Res Function(PlantInfoModel) _then) = _$PlantInfoModelCopyWithImpl;
 @useResult
 $Res call({
- String text
+ String commonName, String scientificName, String plantType, String description, List<String> keyFeatures, String healthStatus, String healthReason, List<String> possibleUses, String watering, String light, String soil
 });
 
 
@@ -65,9 +65,19 @@ class _$PlantInfoModelCopyWithImpl<$Res>
 
 /// Create a copy of PlantInfoModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? text = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? commonName = null,Object? scientificName = null,Object? plantType = null,Object? description = null,Object? keyFeatures = null,Object? healthStatus = null,Object? healthReason = null,Object? possibleUses = null,Object? watering = null,Object? light = null,Object? soil = null,}) {
   return _then(_self.copyWith(
-text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
+commonName: null == commonName ? _self.commonName : commonName // ignore: cast_nullable_to_non_nullable
+as String,scientificName: null == scientificName ? _self.scientificName : scientificName // ignore: cast_nullable_to_non_nullable
+as String,plantType: null == plantType ? _self.plantType : plantType // ignore: cast_nullable_to_non_nullable
+as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String,keyFeatures: null == keyFeatures ? _self.keyFeatures : keyFeatures // ignore: cast_nullable_to_non_nullable
+as List<String>,healthStatus: null == healthStatus ? _self.healthStatus : healthStatus // ignore: cast_nullable_to_non_nullable
+as String,healthReason: null == healthReason ? _self.healthReason : healthReason // ignore: cast_nullable_to_non_nullable
+as String,possibleUses: null == possibleUses ? _self.possibleUses : possibleUses // ignore: cast_nullable_to_non_nullable
+as List<String>,watering: null == watering ? _self.watering : watering // ignore: cast_nullable_to_non_nullable
+as String,light: null == light ? _self.light : light // ignore: cast_nullable_to_non_nullable
+as String,soil: null == soil ? _self.soil : soil // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }
@@ -153,10 +163,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String text)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String commonName,  String scientificName,  String plantType,  String description,  List<String> keyFeatures,  String healthStatus,  String healthReason,  List<String> possibleUses,  String watering,  String light,  String soil)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PlantInfoModel() when $default != null:
-return $default(_that.text);case _:
+return $default(_that.commonName,_that.scientificName,_that.plantType,_that.description,_that.keyFeatures,_that.healthStatus,_that.healthReason,_that.possibleUses,_that.watering,_that.light,_that.soil);case _:
   return orElse();
 
 }
@@ -174,10 +184,10 @@ return $default(_that.text);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String text)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String commonName,  String scientificName,  String plantType,  String description,  List<String> keyFeatures,  String healthStatus,  String healthReason,  List<String> possibleUses,  String watering,  String light,  String soil)  $default,) {final _that = this;
 switch (_that) {
 case _PlantInfoModel():
-return $default(_that.text);case _:
+return $default(_that.commonName,_that.scientificName,_that.plantType,_that.description,_that.keyFeatures,_that.healthStatus,_that.healthReason,_that.possibleUses,_that.watering,_that.light,_that.soil);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -194,10 +204,10 @@ return $default(_that.text);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String text)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String commonName,  String scientificName,  String plantType,  String description,  List<String> keyFeatures,  String healthStatus,  String healthReason,  List<String> possibleUses,  String watering,  String light,  String soil)?  $default,) {final _that = this;
 switch (_that) {
 case _PlantInfoModel() when $default != null:
-return $default(_that.text);case _:
+return $default(_that.commonName,_that.scientificName,_that.plantType,_that.description,_that.keyFeatures,_that.healthStatus,_that.healthReason,_that.possibleUses,_that.watering,_that.light,_that.soil);case _:
   return null;
 
 }
@@ -209,10 +219,32 @@ return $default(_that.text);case _:
 @JsonSerializable()
 
 class _PlantInfoModel implements PlantInfoModel {
-  const _PlantInfoModel({required this.text});
+  const _PlantInfoModel({required this.commonName, required this.scientificName, required this.plantType, required this.description, required final  List<String> keyFeatures, required this.healthStatus, required this.healthReason, required final  List<String> possibleUses, required this.watering, required this.light, required this.soil}): _keyFeatures = keyFeatures,_possibleUses = possibleUses;
   factory _PlantInfoModel.fromJson(Map<String, dynamic> json) => _$PlantInfoModelFromJson(json);
 
-@override final  String text;
+@override final  String commonName;
+@override final  String scientificName;
+@override final  String plantType;
+@override final  String description;
+ final  List<String> _keyFeatures;
+@override List<String> get keyFeatures {
+  if (_keyFeatures is EqualUnmodifiableListView) return _keyFeatures;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_keyFeatures);
+}
+
+@override final  String healthStatus;
+@override final  String healthReason;
+ final  List<String> _possibleUses;
+@override List<String> get possibleUses {
+  if (_possibleUses is EqualUnmodifiableListView) return _possibleUses;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_possibleUses);
+}
+
+@override final  String watering;
+@override final  String light;
+@override final  String soil;
 
 /// Create a copy of PlantInfoModel
 /// with the given fields replaced by the non-null parameter values.
@@ -227,16 +259,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PlantInfoModel&&(identical(other.text, text) || other.text == text));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PlantInfoModel&&(identical(other.commonName, commonName) || other.commonName == commonName)&&(identical(other.scientificName, scientificName) || other.scientificName == scientificName)&&(identical(other.plantType, plantType) || other.plantType == plantType)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other._keyFeatures, _keyFeatures)&&(identical(other.healthStatus, healthStatus) || other.healthStatus == healthStatus)&&(identical(other.healthReason, healthReason) || other.healthReason == healthReason)&&const DeepCollectionEquality().equals(other._possibleUses, _possibleUses)&&(identical(other.watering, watering) || other.watering == watering)&&(identical(other.light, light) || other.light == light)&&(identical(other.soil, soil) || other.soil == soil));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,text);
+int get hashCode => Object.hash(runtimeType,commonName,scientificName,plantType,description,const DeepCollectionEquality().hash(_keyFeatures),healthStatus,healthReason,const DeepCollectionEquality().hash(_possibleUses),watering,light,soil);
 
 @override
 String toString() {
-  return 'PlantInfoModel(text: $text)';
+  return 'PlantInfoModel(commonName: $commonName, scientificName: $scientificName, plantType: $plantType, description: $description, keyFeatures: $keyFeatures, healthStatus: $healthStatus, healthReason: $healthReason, possibleUses: $possibleUses, watering: $watering, light: $light, soil: $soil)';
 }
 
 
@@ -247,7 +279,7 @@ abstract mixin class _$PlantInfoModelCopyWith<$Res> implements $PlantInfoModelCo
   factory _$PlantInfoModelCopyWith(_PlantInfoModel value, $Res Function(_PlantInfoModel) _then) = __$PlantInfoModelCopyWithImpl;
 @override @useResult
 $Res call({
- String text
+ String commonName, String scientificName, String plantType, String description, List<String> keyFeatures, String healthStatus, String healthReason, List<String> possibleUses, String watering, String light, String soil
 });
 
 
@@ -264,9 +296,19 @@ class __$PlantInfoModelCopyWithImpl<$Res>
 
 /// Create a copy of PlantInfoModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? text = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? commonName = null,Object? scientificName = null,Object? plantType = null,Object? description = null,Object? keyFeatures = null,Object? healthStatus = null,Object? healthReason = null,Object? possibleUses = null,Object? watering = null,Object? light = null,Object? soil = null,}) {
   return _then(_PlantInfoModel(
-text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
+commonName: null == commonName ? _self.commonName : commonName // ignore: cast_nullable_to_non_nullable
+as String,scientificName: null == scientificName ? _self.scientificName : scientificName // ignore: cast_nullable_to_non_nullable
+as String,plantType: null == plantType ? _self.plantType : plantType // ignore: cast_nullable_to_non_nullable
+as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String,keyFeatures: null == keyFeatures ? _self._keyFeatures : keyFeatures // ignore: cast_nullable_to_non_nullable
+as List<String>,healthStatus: null == healthStatus ? _self.healthStatus : healthStatus // ignore: cast_nullable_to_non_nullable
+as String,healthReason: null == healthReason ? _self.healthReason : healthReason // ignore: cast_nullable_to_non_nullable
+as String,possibleUses: null == possibleUses ? _self._possibleUses : possibleUses // ignore: cast_nullable_to_non_nullable
+as List<String>,watering: null == watering ? _self.watering : watering // ignore: cast_nullable_to_non_nullable
+as String,light: null == light ? _self.light : light // ignore: cast_nullable_to_non_nullable
+as String,soil: null == soil ? _self.soil : soil // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }

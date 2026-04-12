@@ -1,4 +1,4 @@
-import 'package:multiple_result/multiple_result.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meet_a_flora/core/errors/failure.dart';
 import 'package:meet_a_flora/features/plant_info/domain/entities/plant_info_entity.dart';
@@ -11,7 +11,7 @@ class PlantInfoUseCase {
 
   PlantInfoUseCase(this._repositoryData);
 
-   Future<Result<PlantInfoEntity, Failure>> getPlantInfo(String image) async {
+  Future<Either<Failure,PlantInfoEntity>> getPlantInfo(String image) async {
     return _repositoryData.getPlantInfo(image);
   }
 }

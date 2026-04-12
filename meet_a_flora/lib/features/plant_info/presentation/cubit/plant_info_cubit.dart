@@ -9,12 +9,12 @@ class PlantInfoCubit extends Cubit<PlantInfoState> {
 
   Future<void> getPlantInfoMethod(String image) async {
     final result = await _plantInfoUseCase.getPlantInfo(image);
-    result.when(
-      (success) {
-        emit(PlantInfoSuccessState(text:success.text));
+    result.fold(
+      (onLeft) {
+        emit(PlantInfoErrorState(message: onLeft.message));
       },
-      (whenError) {
-        emit(PlantInfoErrorState(message: whenError.message));
+      (onRight) {
+        emit(PlantInfoSuccessState(plantInfo: onRight));
       },
     );
   }

@@ -1,4 +1,4 @@
-import 'package:multiple_result/multiple_result.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meet_a_flora/core/errors/failure.dart';
 import 'package:meet_a_flora/features/home/domain/entities/home_entity.dart';
@@ -11,7 +11,7 @@ class HomeUseCase {
 
   HomeUseCase(this._repositoryData);
 
-   Future<Result<List<ImageEntity>, Failure>> getHome() async {
+   Future<Either<Failure,List<ImageEntity>>>getHome() async {
     return _repositoryData.getHome();
   }
 }

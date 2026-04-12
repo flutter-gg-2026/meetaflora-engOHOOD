@@ -26,14 +26,13 @@ class AppRouter {
           child: const HomeFeatureScreen(),
         ),
       ),
-
       GoRoute(
         path: Routes.plantInfo,
         builder: (context, state) {
-          final plant=state.extra as String;
+          final plant = state.extra as String;
           return BlocProvider(
             create: (context) => PlantInfoCubit(GetIt.I.get()),
-            child: PlantInfoFeatureScreen(plant:plant),
+            child: PlantInfoFeatureScreen(plant: plant),
           );
         },
       ),

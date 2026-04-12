@@ -9,25 +9,15 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> getHomeMethod() async {
     final result = await _homeUseCase.getHome();
-    print("---------------------------------2");
 
-    result.when(
-      (success) {
-        print("---------------------------------2.1");
+    result.fold(
+      (onLeft) {
 
-        emit(HomeSuccessState(images: success));
+        emit(HomeErrorState(message: onLeft.message));
       },
-      (whenError) {
-        print("---------------------------------2.2");
-
-        emit(HomeErrorState(message: whenError.message));
+      (onRight) {
+        emit(HomeSuccessState(images: onRight));
       },
     );
-  }
-
-  @override
-  Future<void> close() {
-    //here is when close cubit
-    return super.close();
   }
 }

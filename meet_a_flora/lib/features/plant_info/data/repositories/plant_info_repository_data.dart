@@ -1,6 +1,6 @@
 
+import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
-import 'package:multiple_result/multiple_result.dart';
 import 'package:meet_a_flora/core/errors/network_exceptions.dart';
 import 'package:meet_a_flora/core/errors/failure.dart';
 import 'package:meet_a_flora/features/plant_info/domain/entities/plant_info_entity.dart';
@@ -17,12 +17,12 @@ class PlantInfoRepositoryData implements PlantInfoRepositoryDomain{
   PlantInfoRepositoryData(this.remoteDataSource);
 
 @override
-  Future<Result<PlantInfoEntity, Failure>> getPlantInfo(String image) async {
+  Future<Either<Failure,PlantInfoEntity>> getPlantInfo(String image) async {
     try {
       final response = await remoteDataSource.getPlantInfo(image);
-      return Success(response.toEntity());
+      return Either.right(response.toEntity());
     } catch (error) {
-      return Error(FailureExceptions.getException(error));
+      return Either.left(FailureExceptions.getException(error));
     }
   }
 }
