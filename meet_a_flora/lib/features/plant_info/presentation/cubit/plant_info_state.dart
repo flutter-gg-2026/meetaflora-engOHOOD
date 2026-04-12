@@ -8,7 +8,12 @@ abstract class PlantInfoState extends Equatable {
 }
 
 class PlantInfoInitialState extends PlantInfoState {}
-class PlantInfoSuccessState extends PlantInfoState {}
+class PlantInfoSuccessState extends PlantInfoState {
+  final String text;
+  const PlantInfoSuccessState({required this.text});
+  @override
+  List<Object?> get props => [text];
+}
 
 class PlantInfoErrorState extends PlantInfoState {
   final String message;

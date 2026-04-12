@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ImageModel {
 
- String get original;
+ String get image;
 /// Create a copy of ImageModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $ImageModelCopyWith<ImageModel> get copyWith => _$ImageModelCopyWithImpl<ImageMo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ImageModel&&(identical(other.original, original) || other.original == original));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ImageModel&&(identical(other.image, image) || other.image == image));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,original);
+int get hashCode => Object.hash(runtimeType,image);
 
 @override
 String toString() {
-  return 'ImageModel(original: $original)';
+  return 'ImageModel(image: $image)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $ImageModelCopyWith<$Res>  {
   factory $ImageModelCopyWith(ImageModel value, $Res Function(ImageModel) _then) = _$ImageModelCopyWithImpl;
 @useResult
 $Res call({
- String original
+ String image
 });
 
 
@@ -65,9 +65,9 @@ class _$ImageModelCopyWithImpl<$Res>
 
 /// Create a copy of ImageModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? original = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? image = null,}) {
   return _then(_self.copyWith(
-original: null == original ? _self.original : original // ignore: cast_nullable_to_non_nullable
+image: null == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }
@@ -153,10 +153,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String original)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String image)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ImageModel() when $default != null:
-return $default(_that.original);case _:
+return $default(_that.image);case _:
   return orElse();
 
 }
@@ -174,10 +174,10 @@ return $default(_that.original);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String original)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String image)  $default,) {final _that = this;
 switch (_that) {
 case _ImageModel():
-return $default(_that.original);case _:
+return $default(_that.image);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -194,10 +194,10 @@ return $default(_that.original);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String original)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String image)?  $default,) {final _that = this;
 switch (_that) {
 case _ImageModel() when $default != null:
-return $default(_that.original);case _:
+return $default(_that.image);case _:
   return null;
 
 }
@@ -209,10 +209,10 @@ return $default(_that.original);case _:
 @JsonSerializable()
 
 class _ImageModel implements ImageModel {
-  const _ImageModel({required this.original});
+  const _ImageModel({required this.image});
   factory _ImageModel.fromJson(Map<String, dynamic> json) => _$ImageModelFromJson(json);
 
-@override final  String original;
+@override final  String image;
 
 /// Create a copy of ImageModel
 /// with the given fields replaced by the non-null parameter values.
@@ -227,16 +227,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ImageModel&&(identical(other.original, original) || other.original == original));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ImageModel&&(identical(other.image, image) || other.image == image));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,original);
+int get hashCode => Object.hash(runtimeType,image);
 
 @override
 String toString() {
-  return 'ImageModel(original: $original)';
+  return 'ImageModel(image: $image)';
 }
 
 
@@ -247,7 +247,7 @@ abstract mixin class _$ImageModelCopyWith<$Res> implements $ImageModelCopyWith<$
   factory _$ImageModelCopyWith(_ImageModel value, $Res Function(_ImageModel) _then) = __$ImageModelCopyWithImpl;
 @override @useResult
 $Res call({
- String original
+ String image
 });
 
 
@@ -264,9 +264,9 @@ class __$ImageModelCopyWithImpl<$Res>
 
 /// Create a copy of ImageModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? original = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? image = null,}) {
   return _then(_ImageModel(
-original: null == original ? _self.original : original // ignore: cast_nullable_to_non_nullable
+image: null == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }

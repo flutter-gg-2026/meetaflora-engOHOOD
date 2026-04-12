@@ -6,7 +6,6 @@ import 'api_endpoints.dart';
 @lazySingleton
 class DioClient {
   late final Dio _aiDio;
-  late final Dio _photoDio;
   DioClient() {
     _aiDio = Dio(
       BaseOptions(
@@ -20,19 +19,7 @@ class DioClient {
         },
       ),
     );
-    _photoDio = Dio(
-      BaseOptions(
-        baseUrl: ApiEndpoints.photoBaseUrl,
-        connectTimeout: const Duration(seconds: 30),
-        receiveTimeout: const Duration(seconds: 30),
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': dotenv.env['Pexels_API_Key'],
-        },
-      ),
-    );
   }
 
   Dio get aiDio => _aiDio;
-  Dio get photoDio => _photoDio;
 }

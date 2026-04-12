@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PlantInfoModel {
 
- int get id; String get firstName; String get lastName;
+ String get text;
 /// Create a copy of PlantInfoModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $PlantInfoModelCopyWith<PlantInfoModel> get copyWith => _$PlantInfoModelCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PlantInfoModel&&(identical(other.id, id) || other.id == id)&&(identical(other.firstName, firstName) || other.firstName == firstName)&&(identical(other.lastName, lastName) || other.lastName == lastName));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PlantInfoModel&&(identical(other.text, text) || other.text == text));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,firstName,lastName);
+int get hashCode => Object.hash(runtimeType,text);
 
 @override
 String toString() {
-  return 'PlantInfoModel(id: $id, firstName: $firstName, lastName: $lastName)';
+  return 'PlantInfoModel(text: $text)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $PlantInfoModelCopyWith<$Res>  {
   factory $PlantInfoModelCopyWith(PlantInfoModel value, $Res Function(PlantInfoModel) _then) = _$PlantInfoModelCopyWithImpl;
 @useResult
 $Res call({
- int id, String firstName, String lastName
+ String text
 });
 
 
@@ -65,11 +65,9 @@ class _$PlantInfoModelCopyWithImpl<$Res>
 
 /// Create a copy of PlantInfoModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? firstName = null,Object? lastName = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? text = null,}) {
   return _then(_self.copyWith(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,firstName: null == firstName ? _self.firstName : firstName // ignore: cast_nullable_to_non_nullable
-as String,lastName: null == lastName ? _self.lastName : lastName // ignore: cast_nullable_to_non_nullable
+text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }
@@ -155,10 +153,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String firstName,  String lastName)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String text)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PlantInfoModel() when $default != null:
-return $default(_that.id,_that.firstName,_that.lastName);case _:
+return $default(_that.text);case _:
   return orElse();
 
 }
@@ -176,10 +174,10 @@ return $default(_that.id,_that.firstName,_that.lastName);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String firstName,  String lastName)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String text)  $default,) {final _that = this;
 switch (_that) {
 case _PlantInfoModel():
-return $default(_that.id,_that.firstName,_that.lastName);case _:
+return $default(_that.text);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -196,10 +194,10 @@ return $default(_that.id,_that.firstName,_that.lastName);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String firstName,  String lastName)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String text)?  $default,) {final _that = this;
 switch (_that) {
 case _PlantInfoModel() when $default != null:
-return $default(_that.id,_that.firstName,_that.lastName);case _:
+return $default(_that.text);case _:
   return null;
 
 }
@@ -211,12 +209,10 @@ return $default(_that.id,_that.firstName,_that.lastName);case _:
 @JsonSerializable()
 
 class _PlantInfoModel implements PlantInfoModel {
-  const _PlantInfoModel({required this.id, required this.firstName, required this.lastName});
+  const _PlantInfoModel({required this.text});
   factory _PlantInfoModel.fromJson(Map<String, dynamic> json) => _$PlantInfoModelFromJson(json);
 
-@override final  int id;
-@override final  String firstName;
-@override final  String lastName;
+@override final  String text;
 
 /// Create a copy of PlantInfoModel
 /// with the given fields replaced by the non-null parameter values.
@@ -231,16 +227,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PlantInfoModel&&(identical(other.id, id) || other.id == id)&&(identical(other.firstName, firstName) || other.firstName == firstName)&&(identical(other.lastName, lastName) || other.lastName == lastName));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PlantInfoModel&&(identical(other.text, text) || other.text == text));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,firstName,lastName);
+int get hashCode => Object.hash(runtimeType,text);
 
 @override
 String toString() {
-  return 'PlantInfoModel(id: $id, firstName: $firstName, lastName: $lastName)';
+  return 'PlantInfoModel(text: $text)';
 }
 
 
@@ -251,7 +247,7 @@ abstract mixin class _$PlantInfoModelCopyWith<$Res> implements $PlantInfoModelCo
   factory _$PlantInfoModelCopyWith(_PlantInfoModel value, $Res Function(_PlantInfoModel) _then) = __$PlantInfoModelCopyWithImpl;
 @override @useResult
 $Res call({
- int id, String firstName, String lastName
+ String text
 });
 
 
@@ -268,11 +264,9 @@ class __$PlantInfoModelCopyWithImpl<$Res>
 
 /// Create a copy of PlantInfoModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? firstName = null,Object? lastName = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? text = null,}) {
   return _then(_PlantInfoModel(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,firstName: null == firstName ? _self.firstName : firstName // ignore: cast_nullable_to_non_nullable
-as String,lastName: null == lastName ? _self.lastName : lastName // ignore: cast_nullable_to_non_nullable
+text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }

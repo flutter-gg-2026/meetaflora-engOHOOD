@@ -17,9 +17,9 @@ class PlantInfoRepositoryData implements PlantInfoRepositoryDomain{
   PlantInfoRepositoryData(this.remoteDataSource);
 
 @override
-  Future<Result<PlantInfoEntity, Failure>> getPlantInfo() async {
+  Future<Result<PlantInfoEntity, Failure>> getPlantInfo(String image) async {
     try {
-      final response = await remoteDataSource.getPlantInfo();
+      final response = await remoteDataSource.getPlantInfo(image);
       return Success(response.toEntity());
     } catch (error) {
       return Error(FailureExceptions.getException(error));

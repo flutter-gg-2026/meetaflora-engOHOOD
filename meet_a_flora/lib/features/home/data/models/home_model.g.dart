@@ -7,7 +7,7 @@ part of 'home_model.dart';
 // **************************************************************************
 
 _ImageModel _$ImageModelFromJson(Map<String, dynamic> json) =>
-    _ImageModel(original: json['original'] as String);
+    _ImageModel(image: json['image'] as String);
 
 Map<String, dynamic> _$ImageModelToJson(_ImageModel instance) =>
-    <String, dynamic>{'original': instance.original};
+    <String, dynamic>{'image': instance.image};

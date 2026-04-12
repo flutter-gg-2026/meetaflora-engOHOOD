@@ -5,6 +5,4 @@ class ApiEndpoints {
   static const String aiBaseUrl =
       "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest";
   static const String generateContent = ":generateContent";
-  static const String photoBaseUrl = "https://api.pexels.com/v1";
-  static const String searchPhoto = "/search";
 }

@@ -4,13 +4,12 @@ import 'dart:typed_data';
 import 'package:flutter/services.dart';
 import 'package:meet_a_flora/core/network/api_endpoints.dart';
 import 'package:meet_a_flora/core/network/dio_client.dart';
-import 'package:meet_a_flora/features/home/data/models/home_model.dart';
 
 extension GeminiMethod on DioClient {
-  Future<String> postRequest() async {
-    String imagePath = "assets/images/plant.jpeg";
-
-    final byteData = await rootBundle.load(imagePath);
+  Future<String> postRequest(String image) async {
+ print("---------------------------------4.3");
+  print(image);
+    final byteData = await rootBundle.load(image);
 
     Uint8List bytes = byteData.buffer.asUint8List();
     String base64String = base64.encode(bytes);
@@ -23,7 +22,7 @@ extension GeminiMethod on DioClient {
             "parts": [
               {
                 "inline_data": {
-                  "mime_type": "image/jpeg",
+                  "mime_type": "image/jpg",
                   "data": base64String,
                 },
               },
@@ -70,20 +69,5 @@ Keep the response clear, structured, and concise.""",
     print(response.data);
 
     return '';
-  }
-
-  Future<List<Map<String, dynamic>>> getPhoto() async {
-    final respons = await photoDio.get(
-      ApiEndpoints.searchPhoto,
-      queryParameters: {
-        'query': "flower",
-        'per_page': 20,
-        'orientation': 'square',
-      },
-    );
-
-    print(respons.data['photos']);
-
-    return respons.data['photos'].cast<Map<String, dynamic>>();
   }
 }

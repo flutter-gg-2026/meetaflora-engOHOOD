@@ -11,7 +11,7 @@ class PlantInfoUseCase {
 
   PlantInfoUseCase(this._repositoryData);
 
-   Future<Result<PlantInfoEntity, Failure>> getPlantInfo() async {
-    return _repositoryData.getPlantInfo();
+   Future<Result<PlantInfoEntity, Failure>> getPlantInfo(String image) async {
+    return _repositoryData.getPlantInfo(image);
   }
 }

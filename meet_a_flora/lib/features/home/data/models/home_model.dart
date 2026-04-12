@@ -6,7 +6,7 @@ part 'home_model.g.dart';
 @freezed
 abstract class ImageModel with _$ImageModel {
   const factory ImageModel({
-    required String original,
+    required String image,
     
   }) = _ImageModel;
 
@@ -17,6 +17,6 @@ abstract class ImageModel with _$ImageModel {
 
 extension ImageModelMapper on ImageModel {
   ImageEntity toEntity() {
-    return ImageEntity(image:original);
+    return ImageEntity(image:image);
   }
   }

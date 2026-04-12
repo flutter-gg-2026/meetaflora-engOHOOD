@@ -8,8 +8,6 @@ import 'package:meet_a_flora/features/home/presentation/cubit/home_cubit.dart';
 import 'package:meet_a_flora/features/plant_info/presentation/pages/plant_info_feature_screen.dart';
 import 'package:meet_a_flora/features/plant_info/presentation/cubit/plant_info_cubit.dart';
 
-
-
 class AppRouter {
   static final GoRouter router = GoRouter(
     initialLocation: Routes.home,
@@ -20,23 +18,26 @@ class AppRouter {
           return Scaffold(body: Center(child: Text("splash screen")));
         }, // SplashScreen
       ),
-    
-  GoRoute(
-    path: Routes.home,
-    builder: (context, state) => BlocProvider(
+
+      GoRoute(
+        path: Routes.home,
+        builder: (context, state) => BlocProvider(
           create: (context) => HomeCubit(GetIt.I.get()),
           child: const HomeFeatureScreen(),
         ),
-  ),
+      ),
 
-  GoRoute(
-    path: Routes.plantInfo,
-    builder: (context, state) => BlocProvider(
-          create: (context) => PlantInfoCubit(GetIt.I.get()),
-          child: const PlantInfoFeatureScreen(),
-        ),
-  ),
-],
+      GoRoute(
+        path: Routes.plantInfo,
+        builder: (context, state) {
+          final plant=state.extra as String;
+          return BlocProvider(
+            create: (context) => PlantInfoCubit(GetIt.I.get()),
+            child: PlantInfoFeatureScreen(plant:plant),
+          );
+        },
+      ),
+    ],
 
     errorBuilder: (context, state) =>
         Scaffold(body: Center(child: Text('Page not found: ${state.uri}'))),
