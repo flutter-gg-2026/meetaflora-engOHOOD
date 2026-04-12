@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:meet_a_flora/core/theme/cubit/theme_cubit.dart';
 import 'package:sizer/sizer.dart';
 import 'core/setup.dart';
 import 'core/theme/app_theme.dart';
@@ -30,18 +32,24 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(
       builder: (context, orientation, screenType) {
-        return MaterialApp.router(
-          routerConfig: AppRouter.router,
-          localizationsDelegates: context.localizationDelegates,
-          supportedLocales: context.supportedLocales,
-          locale: context.locale,
-          // themeMode: state.themeMode,
-          theme: AppTheme.lightTheme,
-          darkTheme: AppTheme.darkTheme,
-          debugShowCheckedModeBanner: true,
+        return BlocProvider(
+          create: (context) => ThemeCubit(),
+          child: BlocBuilder<ThemeCubit, ThemeMode>(
+            builder: (context, state) {
+              return MaterialApp.router(
+                routerConfig: AppRouter.router,
+                localizationsDelegates: context.localizationDelegates,
+                supportedLocales: context.supportedLocales,
+                locale: context.locale,
+                // themeMode: state.themeMode,
+                theme: AppTheme.lightTheme,
+                darkTheme: AppTheme.darkTheme,
+                debugShowCheckedModeBanner: true,
+              );
+            },
+          ),
         );
       },
     );
   }
 }
-
