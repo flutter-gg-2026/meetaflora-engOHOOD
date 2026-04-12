@@ -35,25 +35,8 @@
 
 ---
 
-## 📂 Project Structure
-lib/
-│── core/
-│ ├── network/
-│ │ ├── dio_client.dart
-│ │ ├── api_endpoints.dart
-│
-│── features/
-│ ├── home/
-│ │ ├── data/
-│ │ ├── domain/
-│ │ ├── presentation/
-│
-│── main.dart
-
-
-
 ## 📱 App Demo
-<img width="366" height="742" alt="pic1" src="https://github.com/user-attachments/assets/c0498ec4-863d-4d55-9de7-f86088a97728" />
-<img width="366" height="742" alt="pic2" src="https://github.com/user-attachments/assets/1d4efa9d-1050-4894-b8b8-b7c5ed1ac603" />
-<img width="366" height="742" alt="pic3" src="https://github.com/user-attachments/assets/f6ab3bf5-6a5f-43b1-b435-4278e48d93ee" />
+<img width="266" height="642" alt="pic1" src="https://github.com/user-attachments/assets/c0498ec4-863d-4d55-9de7-f86088a97728" />
+<img width="266" height="642" alt="pic2" src="https://github.com/user-attachments/assets/1d4efa9d-1050-4894-b8b8-b7c5ed1ac603" />
+<img width="266" height="642" alt="pic3" src="https://github.com/user-attachments/assets/f6ab3bf5-6a5f-43b1-b435-4278e48d93ee" />
 
